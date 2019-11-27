@@ -1,3 +1,9 @@
+ignition-msgs5 (5.0.0~pre1-1~bionic) bionic; urgency=medium
+
+  * ignition-msgs5 5.0.0~pre1-1 release
+
+ -- Louise Poubel <louise@openrobotics.org>  Wed, 27 Nov 2019 11:11:34 -0800
+
 ignition-msgs5 (4.999.999-1~bionic) bionic; urgency=medium
 
   * Stub
