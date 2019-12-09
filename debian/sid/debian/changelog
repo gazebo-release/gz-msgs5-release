@@ -1,3 +1,9 @@
+ignition-msgs5 (5.0.0-1~sid) sid; urgency=medium
+
+  * ignition-msgs5 5.0.0-1 release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Mon, 09 Dec 2019 23:40:42 +0100
+
 ignition-msgs5 (5.0.0~pre2-1~sid) sid; urgency=medium
 
   * ignition-msgs5 5.0.0~pre2-1 release
