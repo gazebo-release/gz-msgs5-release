@@ -8,7 +8,7 @@ index 7d5d370..0a48741 100644
        {"rgb", msgs::PointCloudPacked::Field::FLOAT32}});
  
    EXPECT_EQ(4, pc.field_size());
-+#ifndef __ARM_ARCH_7__
++#ifndef __arm__
    EXPECT_EQ(24u, pc.point_step());
 -
 +#endif
@@ -19,7 +19,7 @@ index 7d5d370..0a48741 100644
    EXPECT_EQ(1u, pc.field(2).count());
  
    EXPECT_EQ("rgb", pc.field(3).name());
-+#ifndef __ARM_ARCH_7__
++#ifndef __arm__
    EXPECT_EQ(16u, pc.field(3).offset());
 +#endif
    EXPECT_EQ(msgs::PointCloudPacked::Field::FLOAT32, pc.field(3).datatype());
