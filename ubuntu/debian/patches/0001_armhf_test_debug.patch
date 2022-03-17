@@ -1,5 +1,5 @@
 diff --git a/src/PointCloudPackedUtils_TEST.cc b/src/PointCloudPackedUtils_TEST.cc
-index 93ef0f2..f3d4e5f 100644
+index 93ef0f2..b357414 100644
 --- a/src/PointCloudPackedUtils_TEST.cc
 +++ b/src/PointCloudPackedUtils_TEST.cc
 @@ -113,6 +113,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
@@ -57,15 +57,33 @@ index 93ef0f2..f3d4e5f 100644
    unsigned int i = 0;
    for (; xIter != xIter.End(); ++i,
        ++xIter,
-@@ -178,6 +186,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+@@ -168,16 +176,25 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+       ++tIter,
+       ++uIter)
+   {
++    std::cerr << "  Hello 7 x = i " << i << std::endl;
+     *xIter = i;
++    std::cerr << "  Hello 7 y = i+1 " << i+1 << std::endl;
+     *yIter = i + 1;
++    std::cerr << "  Hello 7 z = i+2 " << i+2 << std::endl;
+     *zIter = i + 2;
++    std::cerr << "  Hello 7 r = i+3 " << i+3 << std::endl;
+     *rIter = i + 3;
++    std::cerr << "  Hello 7 s = i+4 " << i+4 << std::endl;
+     *sIter = i + 4;
++    std::cerr << "  Hello 7 t = i+5 " << i+5 << std::endl;
+     *tIter = i + 5;
++    std::cerr << "  Hello 7 u = i+6.0 " << i+6.0 << std::endl;
+     *uIter = i + 6.0;
    }
++  std::cerr << "  Hello 7 pcMsg.point_step() " << pcMsg.point_step() << std::endl;
    EXPECT_EQ(i * pcMsg.point_step(), total);
  
 +  std::cerr << "Hello 8" << std::endl;
    EXPECT_EQ(xIter, xIter.End());
    EXPECT_EQ(yIter, yIter.End());
    EXPECT_EQ(zIter, zIter.End());
-@@ -186,6 +195,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+@@ -186,6 +203,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
    EXPECT_EQ(tIter, tIter.End());
    EXPECT_EQ(uIter, uIter.End());
  
@@ -73,7 +91,7 @@ index 93ef0f2..f3d4e5f 100644
    // Const the cloud with const iterators
    PointCloudPackedConstIterator<int8_t> xIterConst(pcMsg, "x");
    PointCloudPackedConstIterator<uint8_t> yIterConst(pcMsg, "y");
-@@ -195,6 +205,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+@@ -195,6 +213,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
    PointCloudPackedConstIterator<uint32_t> tIterConst(pcMsg, "t");
    PointCloudPackedConstIterator<float> uIterConst(pcMsg, "u");
  
@@ -81,7 +99,7 @@ index 93ef0f2..f3d4e5f 100644
    EXPECT_NE(xIterConst, xIterConst.End());
    EXPECT_NE(yIterConst, yIterConst.End());
    EXPECT_NE(zIterConst, zIterConst.End());
-@@ -203,6 +214,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+@@ -203,6 +222,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
    EXPECT_NE(tIterConst, tIterConst.End());
    EXPECT_NE(uIterConst, uIterConst.End());
  
@@ -89,7 +107,7 @@ index 93ef0f2..f3d4e5f 100644
    i = 0u;
    for (; xIterConst != xIterConst.End(); ++i,
        ++xIterConst,
-@@ -223,6 +235,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+@@ -223,6 +243,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
    }
    EXPECT_EQ(i * pcMsg.point_step(), total);
  
