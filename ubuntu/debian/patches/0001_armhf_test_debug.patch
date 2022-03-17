@@ -1,0 +1,99 @@
+diff --git a/src/PointCloudPackedUtils_TEST.cc b/src/PointCloudPackedUtils_TEST.cc
+index 93ef0f2..f3d4e5f 100644
+--- a/src/PointCloudPackedUtils_TEST.cc
++++ b/src/PointCloudPackedUtils_TEST.cc
+@@ -113,6 +113,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+ {
+   PointCloudPacked pcMsg;
+ 
++  std::cerr << "Hello 0" << std::endl;
+   InitPointCloudPacked(pcMsg, "my_new_frame", false,
+       {{"x", PointCloudPacked::Field::INT8},
+        {"y", PointCloudPacked::Field::UINT8},
+@@ -123,25 +124,30 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+        {"u", PointCloudPacked::Field::FLOAT64}});
+   EXPECT_EQ(7, pcMsg.field_size());
+ 
++  std::cerr << "Hello 1" << std::endl;
+   EXPECT_EQ("x", pcMsg.field(0).name());
+   EXPECT_EQ(0u, pcMsg.field(0).offset());
+   EXPECT_EQ(msgs::PointCloudPacked::Field::INT8, pcMsg.field(0).datatype());
+   EXPECT_EQ(1u, pcMsg.field(0).count());
+ 
++  std::cerr << "Hello 2" << std::endl;
+   EXPECT_EQ("y", pcMsg.field(1).name());
+   EXPECT_EQ(1u, pcMsg.field(1).offset());
+   EXPECT_EQ(msgs::PointCloudPacked::Field::UINT8, pcMsg.field(1).datatype());
+   EXPECT_EQ(1u, pcMsg.field(1).count());
+ 
++  std::cerr << "Hello 3" << std::endl;
+   EXPECT_EQ("z", pcMsg.field(2).name());
+   EXPECT_EQ(2u, pcMsg.field(2).offset());
+   EXPECT_EQ(msgs::PointCloudPacked::Field::INT16, pcMsg.field(2).datatype());
+   EXPECT_EQ(1u, pcMsg.field(2).count());
+ 
++  std::cerr << "Hello 4" << std::endl;
+   // Reserve space for data
+   unsigned int total{5 * pcMsg.point_step()};
+   pcMsg.mutable_data()->resize(total);
+ 
++  std::cerr << "Hello 5" << std::endl;
+   PointCloudPackedIterator<int8_t> xIter(pcMsg, "x");
+   PointCloudPackedIterator<uint8_t> yIter(pcMsg, "y");
+   PointCloudPackedIterator<int16_t> zIter(pcMsg, "z");
+@@ -150,6 +156,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   PointCloudPackedIterator<uint32_t> tIter(pcMsg, "t");
+   PointCloudPackedIterator<float> uIter(pcMsg, "u");
+ 
++  std::cerr << "Hello 6" << std::endl;
+   EXPECT_NE(xIter, xIter.End());
+   EXPECT_NE(yIter, yIter.End());
+   EXPECT_NE(zIter, zIter.End());
+@@ -158,6 +165,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   EXPECT_NE(tIter, tIter.End());
+   EXPECT_NE(uIter, uIter.End());
+ 
++  std::cerr << "Hello 7" << std::endl;
+   unsigned int i = 0;
+   for (; xIter != xIter.End(); ++i,
+       ++xIter,
+@@ -178,6 +186,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   }
+   EXPECT_EQ(i * pcMsg.point_step(), total);
+ 
++  std::cerr << "Hello 8" << std::endl;
+   EXPECT_EQ(xIter, xIter.End());
+   EXPECT_EQ(yIter, yIter.End());
+   EXPECT_EQ(zIter, zIter.End());
+@@ -186,6 +195,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   EXPECT_EQ(tIter, tIter.End());
+   EXPECT_EQ(uIter, uIter.End());
+ 
++  std::cerr << "Hello 9" << std::endl;
+   // Const the cloud with const iterators
+   PointCloudPackedConstIterator<int8_t> xIterConst(pcMsg, "x");
+   PointCloudPackedConstIterator<uint8_t> yIterConst(pcMsg, "y");
+@@ -195,6 +205,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   PointCloudPackedConstIterator<uint32_t> tIterConst(pcMsg, "t");
+   PointCloudPackedConstIterator<float> uIterConst(pcMsg, "u");
+ 
++  std::cerr << "Hello 10" << std::endl;
+   EXPECT_NE(xIterConst, xIterConst.End());
+   EXPECT_NE(yIterConst, yIterConst.End());
+   EXPECT_NE(zIterConst, zIterConst.End());
+@@ -203,6 +214,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   EXPECT_NE(tIterConst, tIterConst.End());
+   EXPECT_NE(uIterConst, uIterConst.End());
+ 
++  std::cerr << "Hello 11" << std::endl;
+   i = 0u;
+   for (; xIterConst != xIterConst.End(); ++i,
+       ++xIterConst,
+@@ -223,6 +235,7 @@ TEST(PointCloudPackedUtilsTest, MultipleFields)
+   }
+   EXPECT_EQ(i * pcMsg.point_step(), total);
+ 
++  std::cerr << "Hello 12" << std::endl;
+   EXPECT_EQ(xIterConst, xIterConst.End());
+   EXPECT_EQ(yIterConst, yIterConst.End());
+   EXPECT_EQ(zIterConst, zIterConst.End());
