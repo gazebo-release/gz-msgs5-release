@@ -7,4 +7,4 @@ usr/lib/ruby/ignition/*.rb
 usr/lib/*/ruby/ignition/msgs[0-99]/*
 usr/lib/ruby/ignition/*.rb
 usr/share/ignition/ignition-msgs*/ignition-msgs[0-9].tag.xml
-usr/share/gz/gz1.completion.d/msgs5.bash_completion.sh
+usr/share/gz/gz1.completion.d/msgs[0-9].bash_completion.sh
