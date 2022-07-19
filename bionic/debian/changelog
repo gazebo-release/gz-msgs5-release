@@ -1,3 +1,9 @@
+ignition-msgs5 (5.10.0-2~bionic) bionic; urgency=medium
+
+  * ignition-msgs5 5.10.0-2 release
+
+ -- Steve Peters <scpeters@openrobotics.org>  Mon, 18 Jul 2022 22:14:08 -0700
+
 ignition-msgs5 (5.10.0-1~bionic) bionic; urgency=medium
 
   * ignition-msgs5 5.10.0-1 release
