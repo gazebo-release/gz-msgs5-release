@@ -22,7 +22,7 @@ endif
 %:
 	dh $@ --parallel
 
-# https://bitbucket.org/ignitionrobotics/ign-msgs/issues/32/initpointcloudpacked-test-failed-on-i386
+# https://github.com/gazebosim/gz-msgs/issues/32/initpointcloudpacked-test-failed-on-i386
 override_dh_auto_test:
 ifeq ($(DEB_HOST_ARCH),i386)
 	true

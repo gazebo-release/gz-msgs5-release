@@ -14,9 +14,9 @@ Build-Depends: cmake,
                libignition-math6-dev,
                libignition-tools-dev,
                protobuf-compiler,
-Vcs-Browser: https://bitbucket.org/ignitionrobotics/ign_msgs5-release
-Vcs-Hg: https://bitbucket.org/ignitionrobotics/ign_msgs5-release
-Homepage: http://ignitionrobotics.org/
+Vcs-Browser: https://github.com/gazebosim/gz-msgs
+Vcs-Git: https://github.com/gazebosim/gz-msgs
+Homepage: http://gazebosim.org/
 
 Package: libignition-msgs5
 Architecture: any
