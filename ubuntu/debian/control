@@ -43,3 +43,19 @@ Multi-Arch: same
 Description: Protobuf messages for Gazebo applications - Development files
  This library provides a set of google protobuf messages that are typically used
  in Gazebo applications.
+
+Package: libgz-msgs5
+Depends: libignition-msgs5, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
+
+Package: libgz-msgs5-dev
+Depends: libignition-msgs5-dev, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
