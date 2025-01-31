@@ -1,3 +1,9 @@
+ignition-msgs5 (5.11.1-1~sid) sid; urgency=medium
+
+  * ignition-msgs5 5.11.1-1 release
+
+ -- Addisu Z. Taddese <addisu@openrobotics.org>  Fri, 31 Jan 2025 15:00:26 -0600
+
 ignition-msgs5 (5.11.0-1~sid) sid; urgency=medium
 
   * ignition-msgs5 5.11.0-1 release
